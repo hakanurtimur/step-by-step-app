@@ -1,8 +1,13 @@
 
-function GoalItem() {
+function GoalItem( {goals} ) {
 
 
-    return <p>This is your goal...</p>
+    return <>
+        <h1>{goals.title}</h1>
+        <h3>Goal Start At: {goals.startDate}</h3>
+        <h3>Goal End At: {goals.endDate}</h3>
+        
+    </>
 }
 
 

@@ -4,7 +4,9 @@ import GoalList from "../components/GoalList";
 
 function Goals() {
 
-    const goals = useLoaderData();
+    const goals = useLoaderData()
+
+    console.log(goals)
 
 
 
@@ -24,10 +26,25 @@ export const loader = async() => {
 
         throw json({message: 'Goals could not loaded'}, {status: 500})
     }
-    
-    
 
-    return response;
+    const data = await response.json();
+
+    let loadedGoals = [];
+
+    for(const key in data) {
+
+        loadedGoals.push({
+            id: key,
+            title: data[key].title,
+            endDate: data[key].endDate,
+            startDate: data[key].startDate,
+            description: data[key].description,
+        })
+    }
+    
+    
+    
+    return loadedGoals;
     
 
 }

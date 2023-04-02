@@ -1,7 +1,11 @@
 import classes from "./GoalForm.module.css";
+import { Form } from "react-router-dom";
 
 const GoalForm = () => {
-  return (<form className={classes.form}>
+
+
+
+  return (<Form method="POST" className={classes.form}>
     <div>
         <label htmlFor="title">Title</label>
         <input type='text' id='text' name='title' required defaultValue='Title'></input>
@@ -22,7 +26,7 @@ const GoalForm = () => {
         <button>Save</button>
         <button>Cancel</button>
     </div>
-  </form>);
+  </Form>);
 };
 
 export default GoalForm;
