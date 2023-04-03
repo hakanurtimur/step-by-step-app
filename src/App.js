@@ -4,11 +4,16 @@ import "./App.css";
 import RoutLayout from "./Pages/RoutLayout";
 import Home from "./Pages/Home";
 import Goals, { loader as goalsAction } from "./Pages/Goals";
-import NewGoal, { action as addGoalAction } from "./Pages/NewGoal";
-import GoalDetail, {loader as goalDetailsAction} from "./Pages/GoalDetail";
+import NewGoal from "./Pages/NewGoal";
+import { action as manipulateGoalAction } from "./components/GoalForm";
+import GoalDetail, {
+  loader as goalDetailsAction,
+  action as deleteGoalAction,
+} from "./Pages/GoalDetail";
 import EditGoal from "./Pages/EditGoal";
 import GoalLayout from "./Pages/GoalLayout";
 import ErrorPage from "./Pages/ErrorPage";
+import Login, { action as loginAction }from "./Pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -21,12 +26,28 @@ const router = createBrowserRouter([
         path: "goals",
         element: <GoalLayout />,
         children: [
-          { index: true, element: <Goals />, loader: goalsAction},
-          { path: ":goalId", element: <GoalDetail />, loader: goalDetailsAction },
-          { path: "new", element: <NewGoal />, action: addGoalAction },
-          { path: ":goalId/edit", element: <EditGoal /> },
+          { index: true, element: <Goals />, loader: goalsAction },
+          {
+            path: ":goalId",
+            id: "goal-detail",
+            loader: goalDetailsAction,
+            children: [
+              {
+                index: true,
+                element: <GoalDetail />,
+                action: deleteGoalAction,
+              },
+              {
+                path: "edit",
+                element: <EditGoal />,
+                action: manipulateGoalAction,
+              },
+            ],
+          },
+          { path: "new", element: <NewGoal />, action: manipulateGoalAction },
         ],
       },
+      {path: '/login', element: <Login />, action: loginAction}
     ],
   },
 ]);

@@ -6,7 +6,7 @@ function Goals() {
 
     const goals = useLoaderData()
 
-    console.log(goals)
+    
 
 
 

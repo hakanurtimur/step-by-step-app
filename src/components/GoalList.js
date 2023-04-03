@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 function GoalList({ goals }) {
 
-    console.log(goals)
-  return (
-    
-    <ul>
+    const isEmpty = goals.length === 0
+  return ( <>
+    {isEmpty && <p>There is no goals...</p>}
+    {!isEmpty && <ul>
       {goals.map((goal) => (
         <li key={goal.id}>
           <h1><Link to={goal.id} >{goal.title}</Link></h1>
@@ -15,7 +15,8 @@ function GoalList({ goals }) {
           <p>{goal.description}</p>
         </li>
       ))}
-    </ul>
+    </ul>}
+    </>
   );
 }
 
