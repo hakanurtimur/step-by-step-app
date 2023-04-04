@@ -7,11 +7,11 @@ function GoalDetail() {
   
 
   return (
-    <>
+    
       
       <GoalItem goals={goals}></GoalItem>
       
-    </>
+    
   );
 }
 

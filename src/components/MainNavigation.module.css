@@ -1,24 +1,50 @@
 .header {
-    max-width: 60rem;
+    
     margin: auto;
     padding: 2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: #01403A;
+    width: 100%;
+    position: fixed;
+    max-height: 1rem;
+    overflow: hidden;
+    top: 0;
+    z-index: 99;
+    
    
+  }
+  header h1 {
+
+    color: #F2A35E;
+  }
+
+  header strong {
+    color: #F27E7E
   }
   
   .list {
     display: flex;
     gap: 1rem;
+    list-style: none;
+    color: white;
+    margin-left: auto;
   }
   
   .list a {
     text-decoration: none;
-    color: var(--color-primary-400);
+    color: white;
+    
   }
   
   .list a:hover,
   .list a.active {
-    color: var(--color-primary-800);
+    color: #F2A35E;
   }
   
+
+  .actions {
+    margin-right: 3rem;
+    margin-left: auto;
+  }

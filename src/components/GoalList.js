@@ -1,22 +1,27 @@
-import { Link } from 'react-router-dom'
-
+import { Link } from "react-router-dom";
+import classes from "./GoalList.module.css";
 
 function GoalList({ goals }) {
-
-    const isEmpty = goals.length === 0
-  return ( <>
-    {isEmpty && <p>There is no goals...</p>}
-    {!isEmpty && <ul>
-      {goals.map((goal) => (
-        <li key={goal.id}>
-          <h1><Link to={goal.id} >{goal.title}</Link></h1>
-          <p>'Goal Start Date: {goal.startDate}</p> 
-          <p>Goal End Date:  {goal.endDate}</p>
-          <p>{goal.description}</p>
-        </li>
-      ))}
-    </ul>}
-    </>
+  const isEmpty = goals.length === 0;
+  return (
+    <div className={classes.goals}>
+      {isEmpty && <p>There is no goal...</p>}
+      {!isEmpty && (
+        <ul className={classes.list}>
+          {goals.map((goal) => (
+            <li className={classes.item} key={goal.id}>
+              <Link to={goal.id}>
+              <div className={classes.content}>
+                <h1>{goal.title}</h1>
+                <p>Goal Start Date: {goal.startDate}</p>
+                <p>Goal End Date: {goal.endDate}</p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 

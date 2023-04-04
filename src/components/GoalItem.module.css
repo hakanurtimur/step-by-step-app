@@ -1,0 +1,49 @@
+.goalItem {
+    max-width: 40rem;
+    text-align: center;
+    margin: 2rem auto;
+    background-color: #016057;
+    border-radius: 10px;
+    padding: 1rem;
+    color: white;
+}
+
+.content {
+    margin: auto;
+    padding: 1rem;
+}
+
+
+.menu {
+    display: flex;
+    width: 100%;
+    max-width: 20rem;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+menu a:hover,
+menu a.active {
+    color: #F2A35E;
+}
+
+menu button {
+    background-color: #F2A35E;
+    margin: 0.25rem;
+    width: 8rem;
+    color: #01403A;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #F2A35E; 
+    border-radius: 4px;
+    height: 1.25rem;
+}
+
+menu button:hover {
+    transform: scale(1.05);
+}
+

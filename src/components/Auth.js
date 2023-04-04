@@ -1,21 +1,22 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useFetcher } from "react-router-dom";
 import { authActions } from "../store/auth-slice";
+import classes from "./Auth.module.css";
 
-function Auth({ method }) {
+function Auth({ method, color }) {
   const usersName = useSelector((state) => state.auth.userName);
   const dispatch = useDispatch();
   const isLoggedin = useSelector((state) => state.auth.isLoggedin);
 
   const fetcher = useFetcher();
 
-  const { data } = fetcher;
+  const { data, formData, state } = fetcher;
 
-  if (data) {
-    const datas = fetcher.formData;
-    const userName = datas.get("userName");
-    console.log(userName);
+  if (formData && state === "submitting") {
+    dispatch(authActions.changeUserName(formData.get("userName")));
   }
+
+  console.log(usersName);
 
   const logInHandler = () => {
     if (data) {
@@ -30,9 +31,10 @@ function Auth({ method }) {
   return (
     <>
       <fetcher.Form
+        className={classes.form}
         action="/login"
         method={method}
-        style={{ display: `${!isLoggedin ? "inline" : "none"}` }}
+        style={{ display: `${!isLoggedin ? "inline" : "none"}`, color: color }}
       >
         <span>
           <label htmlFor="userName">User Name</label>
@@ -42,14 +44,19 @@ function Auth({ method }) {
           <label htmlFor="password">Password</label>
           <input type="password" id="password" name="password" required />
         </span>
-        <span>
+        <span className={classes.acitons}>
           <button onClick={logInHandler}>Login</button>
         </span>
       </fetcher.Form>
 
-      <div style={{ display: `${!isLoggedin ? "none" : "inline"}` }}>
-        <p>{usersName}</p>
-        <button onClick={logOutHandler}>LogOut</button>
+      <div
+        className={classes.logout}
+        style={{ display: `${!isLoggedin ? "none" : "flex"}`, gap: '1rem', color: 'white' }}
+      >
+ 
+          <h1>{usersName}</h1>
+          <button onClick={logOutHandler}>Logout</button>
+        
       </div>
     </>
   );

@@ -1,16 +1,19 @@
-import { Link } from "react-router-dom";
+
+import { NavLink } from "react-router-dom";
 import classes from './GoalNavigation.module.css'
 
 function GoalNavigation() {
+
+    
   return (
     <header className={classes.header}>
     <nav>
     <ul className={classes.list}>
       <li>
-        <Link to="">Goals</Link>
+        <NavLink className={({isActive}) => isActive ? classes.active : undefined} end to="">Goals</NavLink>
       </li>
       <li>
-        <Link to="new">New Goal</Link>
+        <NavLink className={({isActive}) => isActive ? classes.active : undefined} end  to="new">New Goal</NavLink>
       </li>
     </ul>
     </nav>

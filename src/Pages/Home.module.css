@@ -1,0 +1,32 @@
+.content {
+    margin-top: 10rem;
+    text-align: center;
+    
+}
+
+.content article a {
+    text-decoration: none;
+    color: white;
+    background-color: #01403A;
+    padding: 10px;
+    
+    
+  }
+  
+  .content article a:hover,
+  .content article a.active {
+    color: #F2A35E;
+  }
+
+  .info {
+    background-color: #01403A;
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 40%;
+    margin: 1rem auto;
+    text-align: center;
+  }
+  
+
+ 
