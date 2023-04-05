@@ -15,6 +15,9 @@ function GoalNavigation() {
       <li>
         <NavLink className={({isActive}) => isActive ? classes.active : undefined} end  to="new">New Goal</NavLink>
       </li>
+      <li>
+        <NavLink className={({isActive}) => isActive ? classes.active : undefined} end  to="completed">Completed Goals</NavLink>
+      </li>
     </ul>
     </nav>
     </header>

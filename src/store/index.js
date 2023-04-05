@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authSlice from "./auth-slice";
+import goalsSlice from "./goals-slice";
 
 
 
@@ -7,7 +8,7 @@ import authSlice from "./auth-slice";
 
 
 const store = configureStore({
-    reducer: {auth: authSlice.reducer}
+    reducer: {auth: authSlice.reducer, goals: goalsSlice.reducer}
 })
 
 

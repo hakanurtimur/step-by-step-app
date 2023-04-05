@@ -14,6 +14,7 @@ import EditGoal from "./Pages/EditGoal";
 import GoalLayout from "./Pages/GoalLayout";
 import ErrorPage from "./Pages/ErrorPage";
 import Login, { action as loginAction }from "./Pages/Login";
+import CompletedGoals from "./Pages/CompletedGoals";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
               },
             ],
           },
+          {path: "completed", element: <CompletedGoals />},
           { path: "new", element: <NewGoal />, action: manipulateGoalAction },
         ],
       },

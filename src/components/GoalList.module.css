@@ -10,17 +10,42 @@
     gap: 1rem;
     list-style: none;
 }
-.item a {
-    text-decoration: none;
-    display: flex;
+
+.item  {
+
     background-color: #F2A35E;
     color: #01403A;
     border-radius: 10px;
+    display: inline-flex;
+    padding: 1rem;
+    
+    
+}
+.item a {
+    text-decoration: none;
+    display: flex;
+    color: inherit;
+    flex-grow: 5;
+    
   }
+
+.item button {
+    flex-grow: 1;
+    height: 2rem;
+    align-self: center;
+    border-radius: 5px;
+    color: white;
+    background-color: #01403A;
+}  
+
+.item button:hover {
+
+    background-color: #047065;
+}
     
 
 
-.item a:hover {
+.item:hover {
     transform: scale(1.02);
 }
 

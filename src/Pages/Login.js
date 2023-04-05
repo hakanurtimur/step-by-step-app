@@ -28,6 +28,7 @@ export default Login;
 
 export async function action({ request }) {
   const data = await request.formData();
+  console.log(data)
 
   // send to backend newsletter server ...
 
