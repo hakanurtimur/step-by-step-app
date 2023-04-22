@@ -1,5 +1,7 @@
 # Events App
 
+Step By Step is a React and Redux based web application for goal setting, tracking, and achievement. It allows users to create, view, edit, and delete goals with an intuitive and responsive user interface. React ensures fast and efficient updates to the UI while Redux manages the application's state in a consistent and predictable way. The application also allows users to edit and remove goals, making it a powerful tool for personal and team goal management.
+
 LiveURL: https://stepbystep-urtimur.surge.sh/
 
 ## **🔎 Technologies**
